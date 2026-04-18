@@ -1,0 +1,52 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #ffffff;
+  --foreground: #000000;
+  --primary: #fbbf24; /* Neobrutalist yellow */
+  --border-color: #000000;
+}
+
+.dark {
+  --background: #121212;
+  --foreground: #ffffff;
+  --primary: #f59e0b; /* Slightly darker yellow for dark mode */
+  --border-color: #ffffff;
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Neobrutalist utilities */
+.neo-brutal {
+  border: 3px solid var(--border-color);
+  box-shadow: 4px 4px 0px var(--border-color);
+  border-radius: 0px;
+  transition: all 0.2s ease-in-out;
+}
+
+.neo-brutal:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px 0px var(--border-color);
+}
+
+.neo-brutal-focus:focus {
+  outline: none;
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px 0px var(--border-color);
+}
+
+::selection {
+  background-color: var(--primary);
+  color: #000;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
