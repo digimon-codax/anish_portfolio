@@ -10,13 +10,6 @@ const projects = [
     live: 'https://env-sync-xi.vercel.app/',
   },
   {
-    name: 'ResQWave Frontend',
-    description: 'High-fidelity, military-grade React frontend for a disaster communication application. Implemented a tactical dashboard with telemetry, peer tracking, and offline-first PWA logic.',
-    tech: ['React', 'TailwindCSS', 'Progressive Web App'],
-    github: '#',
-    live: '#',
-  },
-  {
     name: 'Disaster Mesh Backend',
     description: 'Robust Node.js backend for hybrid disaster communication. Designed with PostGIS, secure API endpoints, robust rate limiting, and mesh network synchronization capabilities.',
     tech: ['Node.js', 'Express', 'PostgreSQL', 'Socket.io'],

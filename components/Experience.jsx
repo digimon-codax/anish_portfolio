@@ -13,7 +13,6 @@ const experiences = [
   {
     role: 'Backend Developer',
     company: 'Freelance / Personal Builder',
-    duration: '2023 – Present',
     type: 'Freelance',
     description:
       'Designing RESTful APIs and building robust, scalable server-side systems using Node.js, Express, MongoDB, and PostgreSQL. Focused on writing clean, maintainable code for real-world scenarios.',
@@ -67,9 +66,11 @@ export default function Experience() {
                       <h4 className="text-lg md:text-xl font-bold text-primary mt-1">{exp.company}</h4>
                     </div>
                     <div className="flex flex-wrap gap-2 shrink-0">
-                      <span className="px-3 py-1 bg-foreground text-background font-bold text-xs uppercase tracking-widest border-[2px] border-[var(--border-color)] neo-brutal whitespace-nowrap self-start">
-                        {exp.duration}
-                      </span>
+                      {exp.duration && (
+                        <span className="px-3 py-1 bg-foreground text-background font-bold text-xs uppercase tracking-widest border-[2px] border-[var(--border-color)] neo-brutal whitespace-nowrap self-start">
+                          {exp.duration}
+                        </span>
+                      )}
                       <span className="px-3 py-1 bg-primary text-black font-bold text-xs uppercase tracking-widest border-[2px] border-[var(--border-color)] self-start">
                         {exp.type}
                       </span>

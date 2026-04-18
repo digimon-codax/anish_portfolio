@@ -1,12 +1,6 @@
 'use client';
 import { motion } from 'framer-motion';
 
-const stats = [
-  { label: 'Projects Built', value: '5+' },
-  { label: 'Tech Stack', value: '10+' },
-  { label: 'Year', value: '2nd' },
-];
-
 export default function About() {
   return (
     <section id="about" className="py-20 w-full scroll-mt-20">
@@ -19,36 +13,40 @@ export default function About() {
       >
         {/* Left: Avatar + Stats */}
         <div className="w-full lg:w-2/5 flex flex-col gap-8">
-          {/* Avatar card */}
-          <div className="relative group w-full max-w-sm mx-auto lg:mx-0 cursor-pointer">
-            <div className="absolute inset-0 bg-primary translate-x-5 translate-y-5 border-[3px] border-[var(--border-color)] transition-transform duration-300 group-hover:translate-x-8 group-hover:translate-y-8" />
-            <div className="relative bg-[var(--card-bg)] border-[3px] border-[var(--border-color)] z-10 flex flex-col items-center justify-center overflow-hidden transition-transform duration-300 group-hover:-translate-y-2 group-hover:-translate-x-2 aspect-square">
-              {/* Dot pattern inside */}
-              <div className="dot-grid absolute inset-0 pointer-events-none" />
-              <div className="relative z-10 flex flex-col items-center justify-center p-8 text-center gap-3">
-                <div className="w-20 h-20 border-[3px] border-[var(--border-color)] bg-primary flex items-center justify-center shadow-[6px_6px_0px_var(--border-color)] mb-2">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="black" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
-                    <circle cx="12" cy="7" r="4" />
-                  </svg>
-                </div>
-                <div className="text-2xl font-black tracking-tight">Anish Chatterjee</div>
-                <div className="px-4 py-1 bg-foreground text-background text-sm font-bold uppercase tracking-widest border-[2px] border-[var(--border-color)]">
-                  Backend Dev
-                </div>
+          {/* Terminal Box Graphic */}
+          <div className="relative group w-full max-w-sm mx-auto lg:mx-0 cursor-crosshair">
+            <div className="absolute inset-0 bg-primary translate-x-5 translate-y-5 border-[3px] border-[var(--border-color)] transition-transform duration-300 group-hover:translate-x-6 group-hover:translate-y-6" />
+            <div className="relative bg-foreground border-[3px] border-[var(--border-color)] z-10 flex flex-col overflow-hidden h-72">
+              
+              {/* Terminal Header */}
+              <div className="h-10 bg-[var(--card-bg)] border-b-[3px] border-[var(--border-color)] flex items-center px-4 gap-2 shrink-0">
+                <div className="w-3.5 h-3.5 rounded-full bg-red-400 border-[2px] border-[var(--border-color)]" />
+                <div className="w-3.5 h-3.5 rounded-full bg-[#fbbf24] border-[2px] border-[var(--border-color)]" />
+                <div className="w-3.5 h-3.5 rounded-full bg-green-400 border-[2px] border-[var(--border-color)]" />
+                <span className="font-black text-xs uppercase tracking-widest text-[var(--border-color)] ml-auto opacity-50 block sm:hidden md:block">bash</span>
               </div>
+
+              {/* Terminal Body */}
+              <div className="p-6 font-mono text-sm md:text-base flex flex-col gap-3 text-background">
+                <p className="text-green-400">anish@sys:~$ <span className="text-background/80">whoami</span></p>
+                <p className="text-primary font-bold pl-4">&gt; Backend Engineer</p>
+                
+                <p className="text-green-400 mt-2">anish@sys:~$ <span className="text-background/80">uptime</span></p>
+                <p className="text-primary font-bold pl-4">&gt; Shipping code 24/7</p>
+
+                <p className="text-green-400 mt-2 flex items-center gap-1.5">
+                  anish@sys:~$ <span className="w-2.5 h-5 bg-primary animate-pulse inline-block" />
+                </p>
+              </div>
+
+              {/* Decorative faint overlay icon */}
+              <svg xmlns="http://www.w3.org/2000/svg" width="160" height="160" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" className="absolute bottom-[-10px] right-[-20px] text-background opacity-5 pointer-events-none -rotate-12">
+                <polyline points="4 17 10 11 4 5"></polyline><line x1="12" x2="20" y1="19" y2="19"></line>
+              </svg>
+
             </div>
           </div>
 
-          {/* Stats row */}
-          <div className="grid grid-cols-3 gap-3">
-            {stats.map((s) => (
-              <div key={s.label} className="border-[3px] border-[var(--border-color)] bg-[var(--card-bg)] p-4 text-center shadow-[5px_5px_0px_var(--primary)] hover:shadow-[7px_7px_0px_var(--primary)] hover:-translate-y-1 transition-all">
-                <div className="text-3xl font-black text-primary">{s.value}</div>
-                <div className="text-xs font-bold uppercase tracking-wider opacity-60 mt-1">{s.label}</div>
-              </div>
-            ))}
-          </div>
         </div>
 
         {/* Right: Text Content */}

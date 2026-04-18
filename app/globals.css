@@ -3,27 +3,27 @@
 @tailwind utilities;
 
 :root {
-  --background: #f2f2ef;
-  --foreground: #0a0a0a;
+  --background: #FCECE9;
+  --foreground: #111111;
   --primary: #fbbf24;
   --primary-dark: #d97706;
-  --border-color: #0a0a0a;
-  --muted: #ddddd8;
+  --border-color: #111111;
+  --muted: #E2E2DF;
   --card-bg: #ffffff;
   --selection-blue: #3b82f6;
-  --grid-color: rgba(0,0,0,0.06);
+  --grid-color: rgba(17,17,17,0.06);
 }
 
 .dark {
-  --background: #0d0d0d;
-  --foreground: #f2f2ef;
+  --background: #111111;
+  --foreground: #F4F4F0;
   --primary: #fbbf24;
   --primary-dark: #f59e0b;
-  --border-color: #f2f2ef;
-  --muted: #1a1a1a;
-  --card-bg: #141414;
+  --border-color: #F4F4F0;
+  --muted: #1A1A1A;
+  --card-bg: #1C1C1C;
   --selection-blue: #60a5fa;
-  --grid-color: rgba(255,255,255,0.04);
+  --grid-color: rgba(244,244,240,0.04);
 }
 
 body {

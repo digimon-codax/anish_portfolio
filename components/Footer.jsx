@@ -66,16 +66,10 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* Bottom Branding line */}
-        <div className="flex flex-col md:flex-row justify-between items-center gap-6 pt-4">
-          <div className="text-3xl font-black uppercase tracking-tighter hover:text-primary transition-colors cursor-crosshair">
-            Anish<span className="text-primary">.dev</span>
-          </div>
-          <p className="text-xl font-bold opacity-80 text-center md:text-left decoration-2 underline-offset-4 hover:underline">
-            Backend-Focused Full Stack Developer
-          </p>
+        {/* Bottom Copyright line */}
+        <div className="flex justify-center items-center pt-8 border-t-[3px] border-[var(--border-color)]/20 mt-4">
           <p className="font-black uppercase text-sm tracking-widest opacity-60">
-            © {currentYear} All rights reserved.
+            © {currentYear} Anish Chatterjee. All rights reserved.
           </p>
         </div>
 

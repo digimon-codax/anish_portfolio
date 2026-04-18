@@ -1,9 +1,15 @@
-import { Space_Grotesk } from 'next/font/google';
+import { Space_Grotesk, Bebas_Neue } from 'next/font/google';
 import './globals.css';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 
 const spaceGrotesk = Space_Grotesk({ subsets: ['latin'], display: 'swap' });
+const bebasNeue = Bebas_Neue({
+  weight: '400',
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-display',
+});
 
 export const metadata = {
   metadataBase: new URL('https://your-deployed-domain.com'),
@@ -49,7 +55,7 @@ export default function RootLayout({ children }) {
           }}
         />
       </head>
-      <body className={`${spaceGrotesk.className} min-h-screen flex flex-col bg-background text-foreground transition-colors duration-300`}>
+      <body className={`${spaceGrotesk.className} ${bebasNeue.variable} min-h-screen flex flex-col bg-background text-foreground transition-colors duration-300`}>
         <Navbar />
         <main className="flex-grow w-full">
           {children}

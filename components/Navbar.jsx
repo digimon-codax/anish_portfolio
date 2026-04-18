@@ -45,19 +45,8 @@ export default function Navbar() {
             : 'bg-[var(--background)]/80 border-b-[2px] border-[var(--border-color)]/30'
         }`}
       >
-        {/* Ruler strip */}
-        <div className="w-full h-5 border-b border-[var(--border-color)]/20 flex items-end overflow-hidden bg-[var(--card-bg)]/60 select-none">
-          {Array.from({ length: 100 }).map((_, i) => (
-            <div key={i} className="flex-1 flex flex-col items-start">
-              {i % 5 === 0 && (
-                <span className="text-[6px] font-bold opacity-30 ml-px leading-none">{i * 10}</span>
-              )}
-              <div className={`w-px bg-foreground opacity-20 ${i % 5 === 0 ? 'h-2.5' : 'h-1'}`} />
-            </div>
-          ))}
-        </div>
 
-        <div className="max-w-7xl mx-auto px-5 lg:px-10 py-3 flex justify-between items-center">
+        <div className="max-w-7xl mx-auto px-5 lg:px-10 py-4 flex justify-between items-center">
           <a href="#" className="text-xl font-black tracking-tighter hover:text-primary transition-colors">
             Anish<span className="text-primary">_</span>
           </a>
