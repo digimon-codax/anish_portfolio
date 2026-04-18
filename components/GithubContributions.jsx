@@ -36,6 +36,7 @@ export default function GithubContributions() {
             <div className="min-w-[800px] flex justify-center mt-2 px-4">
               <GitHubCalendar 
                 username="digimon-codax" 
+                year={new Date().getFullYear()}
                 blockSize={18}
                 blockMargin={5}
                 theme={brutalistTheme}
