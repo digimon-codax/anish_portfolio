@@ -35,120 +35,134 @@ export default function Navbar() {
   };
 
   return (
-    <motion.nav 
-      initial={{ y: -100 }}
-      animate={{ y: 0 }}
-      className={`fixed top-0 w-full z-50 transition-all duration-300 ${scrolled ? 'bg-background/95 backdrop-blur-sm border-b-[3px] border-[var(--border-color)]' : 'bg-transparent'}`}
-    >
-      <div className="max-w-7xl mx-auto px-6 lg:px-12 py-5 flex justify-between items-center">
-        <a href="#" className="text-2xl font-bold tracking-tighter hover:scale-105 transition-transform">
-          Anish<span className="text-primary">_</span>
-        </a>
-        
-        {/* Desktop Nav */}
-        <div className="hidden md:flex gap-8 font-medium">
-          {navLinks.map((link) => (
-            <a key={link.name} href={link.href} className="hover:-translate-y-1 hover:text-primary transition-transform">
-              {link.name}
-            </a>
+    <>
+      <motion.nav
+        initial={{ y: -100 }}
+        animate={{ y: 0 }}
+        className={`fixed top-0 w-full z-50 transition-all duration-300 ${
+          scrolled
+            ? 'bg-[var(--background)]/95 backdrop-blur-sm border-b-[3px] border-[var(--border-color)]'
+            : 'bg-[var(--background)]/80 border-b-[2px] border-[var(--border-color)]/30'
+        }`}
+      >
+        {/* Ruler strip */}
+        <div className="w-full h-5 border-b border-[var(--border-color)]/20 flex items-end overflow-hidden bg-[var(--card-bg)]/60 select-none">
+          {Array.from({ length: 100 }).map((_, i) => (
+            <div key={i} className="flex-1 flex flex-col items-start">
+              {i % 5 === 0 && (
+                <span className="text-[6px] font-bold opacity-30 ml-px leading-none">{i * 10}</span>
+              )}
+              <div className={`w-px bg-foreground opacity-20 ${i % 5 === 0 ? 'h-2.5' : 'h-1'}`} />
+            </div>
           ))}
         </div>
-        
-        <div className="hidden md:flex items-center gap-4">
-          <button 
-            onClick={toggleTheme} 
-            className="p-2 border-[3px] border-[var(--border-color)] bg-background neo-brutal hover:bg-primary transition-colors flex items-center justify-center group"
-            aria-label="Toggle Theme"
-          >
-            {isDark ? (
-              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="text-foreground group-hover:text-black">
-                <circle cx="12" cy="12" r="5"></circle>
-                <line x1="12" y1="1" x2="12" y2="3"></line>
-                <line x1="12" y1="21" x2="12" y2="23"></line>
-                <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
-                <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
-                <line x1="1" y1="12" x2="3" y2="12"></line>
-                <line x1="21" y1="12" x2="23" y2="12"></line>
-                <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
-                <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
-              </svg>
-            ) : (
-              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="text-foreground group-hover:text-black">
-                <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
-              </svg>
-            )}
-          </button>
-          <a href="#contact" className="px-5 py-2 bg-primary text-black font-bold neo-brutal hover:bg-black hover:text-primary transition-colors">
-            Let's Talk
+
+        <div className="max-w-7xl mx-auto px-5 lg:px-10 py-3 flex justify-between items-center">
+          <a href="#" className="text-xl font-black tracking-tighter hover:text-primary transition-colors">
+            Anish<span className="text-primary">_</span>
           </a>
-        </div>
 
-        {/* Mobile Nav Toggle */}
-        <div className="md:hidden flex items-center gap-4">
-          <button 
-            onClick={toggleTheme} 
-            className="p-2 border-[3px] border-[var(--border-color)] bg-background neo-brutal z-50 relative"
-            aria-label="Toggle Theme"
-          >
-            {isDark ? (
-              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                <circle cx="12" cy="12" r="5"></circle>
-                <line x1="12" y1="1" x2="12" y2="3"></line>
-                <line x1="12" y1="21" x2="12" y2="23"></line>
-                <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
-                <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
-                <line x1="1" y1="12" x2="3" y2="12"></line>
-                <line x1="21" y1="12" x2="23" y2="12"></line>
-                <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
-                <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
-              </svg>
-            ) : (
-              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
-              </svg>
-            )}
-          </button>
-          <button 
-            className="flex flex-col gap-1.5 z-50 relative" 
-            onClick={() => setIsOpen(!isOpen)}
-            aria-label="Toggle Menu"
-          >
-          <span className={`block w-8 h-1 bg-foreground transition-transform duration-300 ${isOpen ? 'rotate-45 translate-y-2.5' : ''}`}></span>
-          <span className={`block w-8 h-1 bg-foreground transition-opacity duration-300 ${isOpen ? 'opacity-0' : ''}`}></span>
-          <span className={`block w-8 h-1 bg-foreground transition-transform duration-300 ${isOpen ? '-rotate-45 -translate-y-2.5' : ''}`}></span>
-        </button>
-        </div>
-      </div>
-
-      {/* Mobile Menu */}
-      <AnimatePresence>
-        {isOpen && (
-          <motion.div 
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: '100vh' }}
-            exit={{ opacity: 0, height: 0 }}
-            className="md:hidden absolute top-0 left-0 w-full h-screen bg-background border-b-[3px] border-[var(--border-color)] flex flex-col items-center justify-center gap-8"
-          >
+          {/* Desktop nav */}
+          <div className="hidden md:flex gap-6 font-bold text-sm uppercase tracking-wider">
             {navLinks.map((link) => (
-              <a 
-                key={link.name} 
-                href={link.href} 
-                onClick={() => setIsOpen(false)}
-                className="text-4xl font-bold hover:text-primary transition-colors hover:-translate-y-1"
+              <a
+                key={link.name}
+                href={link.href}
+                className="hover:text-primary hover:-translate-y-0.5 transition-all"
               >
                 {link.name}
               </a>
             ))}
-            <a 
-              href="#contact" 
-              onClick={() => setIsOpen(false)}
-              className="mt-6 px-10 py-4 bg-primary text-black text-2xl font-bold neo-brutal"
+          </div>
+
+          <div className="hidden md:flex items-center gap-3">
+            <button
+              onClick={toggleTheme}
+              className="p-2 border-[2px] border-[var(--border-color)] bg-[var(--card-bg)] hover:bg-primary transition-colors group"
+              aria-label="Toggle Theme"
             >
-              Let's Talk
+              {isDark ? (
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="group-hover:stroke-black">
+                  <circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/>
+                  <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+                  <line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/>
+                  <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+                </svg>
+              ) : (
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="group-hover:stroke-black">
+                  <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+                </svg>
+              )}
+            </button>
+            <a
+              href="#contact"
+              className="px-5 py-2 bg-foreground text-background font-black text-sm uppercase tracking-wider border-[3px] border-[var(--border-color)] shadow-[4px_4px_0px_var(--primary)] hover:shadow-[2px_2px_0px_var(--primary)] hover:translate-x-0.5 hover:translate-y-0.5 transition-all"
+            >
+              Contact
             </a>
+          </div>
+
+          {/* Mobile controls */}
+          <div className="md:hidden flex items-center gap-3">
+            <button onClick={toggleTheme} className="p-2 border-[2px] border-[var(--border-color)] bg-[var(--card-bg)]" aria-label="Toggle Theme">
+              {isDark ? (
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                  <circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/>
+                </svg>
+              ) : (
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+                </svg>
+              )}
+            </button>
+            {/* MENU button (nudge-folio style) */}
+            <button
+              onClick={() => setIsOpen(!isOpen)}
+              className="px-4 py-2 bg-foreground text-background font-black text-xs uppercase tracking-widest border-[2px] border-[var(--border-color)]"
+              aria-label="Toggle Menu"
+            >
+              {isOpen ? 'CLOSE' : 'MENU'}
+            </button>
+          </div>
+        </div>
+      </motion.nav>
+
+      {/* Full-screen mobile menu (nudge-folio style) */}
+      <AnimatePresence>
+        {isOpen && (
+          <motion.div
+            initial={{ opacity: 0, y: '-100%' }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: '-100%' }}
+            transition={{ duration: 0.35, ease: 'easeInOut' }}
+            className="fixed inset-0 z-40 bg-foreground text-background flex flex-col items-center justify-center gap-8"
+          >
+            {navLinks.map((link, i) => (
+              <motion.a
+                key={link.name}
+                href={link.href}
+                onClick={() => setIsOpen(false)}
+                initial={{ opacity: 0, x: -30 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ delay: i * 0.06 }}
+                className="text-5xl font-black uppercase tracking-tighter hover:text-primary transition-colors"
+              >
+                {link.name}
+              </motion.a>
+            ))}
+            <motion.a
+              href="#contact"
+              onClick={() => setIsOpen(false)}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.35 }}
+              className="mt-4 px-10 py-4 bg-primary text-black text-2xl font-black border-[3px] border-background shadow-[6px_6px_0px_rgba(255,255,255,0.3)]"
+            >
+              Let&apos;s Talk →
+            </motion.a>
           </motion.div>
         )}
       </AnimatePresence>
-    </motion.nav>
+    </>
   );
 }

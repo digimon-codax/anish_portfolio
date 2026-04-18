@@ -3,17 +3,27 @@
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #000000;
-  --primary: #fbbf24; /* Neobrutalist yellow */
-  --border-color: #000000;
+  --background: #f2f2ef;
+  --foreground: #0a0a0a;
+  --primary: #fbbf24;
+  --primary-dark: #d97706;
+  --border-color: #0a0a0a;
+  --muted: #ddddd8;
+  --card-bg: #ffffff;
+  --selection-blue: #3b82f6;
+  --grid-color: rgba(0,0,0,0.06);
 }
 
 .dark {
-  --background: #121212;
-  --foreground: #ffffff;
-  --primary: #f59e0b; /* Slightly darker yellow for dark mode */
-  --border-color: #ffffff;
+  --background: #0d0d0d;
+  --foreground: #f2f2ef;
+  --primary: #fbbf24;
+  --primary-dark: #f59e0b;
+  --border-color: #f2f2ef;
+  --muted: #1a1a1a;
+  --card-bg: #141414;
+  --selection-blue: #60a5fa;
+  --grid-color: rgba(255,255,255,0.04);
 }
 
 body {
@@ -22,31 +32,79 @@ body {
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-/* Neobrutalist utilities */
+/* ── Canvas grid background ── */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image:
+    linear-gradient(var(--grid-color) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid-color) 1px, transparent 1px);
+  background-size: 40px 40px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Every page content sits above the grid */
+#__next, main, nav, footer { position: relative; z-index: 1; }
+
+/* ── Neobrutalist base card ── */
 .neo-brutal {
   border: 3px solid var(--border-color);
   box-shadow: 4px 4px 0px var(--border-color);
   border-radius: 0px;
   transition: all 0.2s ease-in-out;
 }
-
 .neo-brutal:hover {
   transform: translate(-2px, -2px);
   box-shadow: 6px 6px 0px var(--border-color);
 }
-
 .neo-brutal-focus:focus {
   outline: none;
   transform: translate(-2px, -2px);
   box-shadow: 6px 6px 0px var(--border-color);
 }
 
-::selection {
-  background-color: var(--primary);
-  color: #000;
+/* ── Selection box (Figma style) ── */
+.selection-box {
+  border: 2px dashed var(--selection-blue);
+  position: relative;
+}
+.selection-box::before,
+.selection-box::after {
+  content: '';
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background: white;
+  border: 2px solid var(--selection-blue);
+}
+.selection-box::before { top: -6px; left: -6px; }
+.selection-box::after  { top: -6px; right: -6px; }
+
+/* ── Sticky label ── */
+.sticky-label {
+  display: inline-block;
+  padding: 6px 14px;
+  font-weight: 800;
+  font-size: 0.8rem;
+  border: 2px solid var(--border-color);
+  box-shadow: 3px 3px 0px var(--border-color);
+  white-space: nowrap;
 }
 
-/* Smooth scrolling */
-html {
-  scroll-behavior: smooth;
+/* ── Yellow glow on hover ── */
+.glow-hover {
+  transition: box-shadow 0.3s ease;
 }
+.glow-hover:hover {
+  box-shadow: 0 0 28px 4px rgba(251, 191, 36, 0.18);
+}
+
+/* ── Custom scrollbar ── */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--background); }
+::-webkit-scrollbar-thumb { background: var(--primary); }
+
+::selection { background-color: var(--primary); color: #000; }
+html { scroll-behavior: smooth; }
