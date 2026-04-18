@@ -19,13 +19,17 @@ export default function Footer() {
         </div>
         
         {/* Right Side */}
-        <div className="text-center md:text-right font-medium flex flex-col items-center md:items-end">
-          <p className="text-xl md:text-2xl font-bold bg-background text-foreground px-4 py-2 border-[3px] border-[var(--border-color)] inline-block mb-4 shadow-[4px_4px_0px_var(--primary)] -rotate-1 hover:rotate-1 transition-transform">
-            Built with <span className="underline decoration-4 underline-offset-4 decoration-primary">Next.js</span> & <span className="underline decoration-4 underline-offset-4 decoration-[#38bdf8]">Tailwind</span>
-          </p>
-          <p className="text-lg font-bold opacity-80 hover:text-primary transition-colors cursor-crosshair">
-            Designed with Neobrutalism in mind.
-          </p>
+        <div className="text-center md:text-right font-medium flex flex-col items-center md:items-end mt-8 md:mt-0">
+          <div className="text-xl md:text-2xl font-black bg-background text-foreground px-6 py-3 border-[3px] border-[var(--border-color)] inline-block mb-5 shadow-[5px_5px_0px_var(--primary)] rotate-1 hover:-rotate-1 transition-transform select-none">
+            Stay Bold. <span className="underline decoration-4 underline-offset-4 decoration-primary">Ship Fast.</span> ⚡
+          </div>
+          <div className="flex items-center gap-3 text-lg font-bold opacity-90 transition-colors cursor-crosshair">
+            <span className="relative flex h-3 w-3">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+              <span className="relative inline-flex rounded-full h-3 w-3 bg-green-500"></span>
+            </span>
+            Available for new opportunities
+          </div>
         </div>
         
       </div>
