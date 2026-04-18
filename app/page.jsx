@@ -6,6 +6,7 @@ import Projects from '../components/Projects';
 import Education from '../components/Education';
 import Achievements from '../components/Achievements';
 import Contact from '../components/Contact';
+import GithubContributions from '../components/GithubContributions';
 
 export default function Home() {
   return (
@@ -15,6 +16,7 @@ export default function Home() {
       <Skills />
       <Experience />
       <Projects />
+      <GithubContributions />
       <Education />
       <Achievements />
       <Contact />

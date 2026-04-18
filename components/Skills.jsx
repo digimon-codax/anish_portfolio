@@ -31,8 +31,8 @@ export default function Skills() {
           {skills.map((skill, index) => (
             <motion.div
               key={skill.name}
-              initial={{ opacity: 0, scale: 0.8 }}
-              whileInView={{ opacity: 1, scale: 1 }}
+              initial={{ opacity: 0, scale: 0.8, rotate: skill.rotate }}
+              whileInView={{ opacity: 1, scale: 1, rotate: skill.rotate }}
               viewport={{ once: true }}
               transition={{ 
                 delay: index * 0.05, 
@@ -42,10 +42,9 @@ export default function Skills() {
               }}
               whileHover={{ 
                 scale: 1.05, 
-                rotate: skill.rotate * 2, // Exaggerates the angle slightly on hover
+                rotate: skill.rotate * 2.5, 
                 y: -5
               }}
-              style={{ rotate: `${skill.rotate}deg` }} // Applied a slight default tilt to all badges
               className="px-6 py-4 md:px-8 md:py-5 bg-background border-[3px] border-[var(--border-color)] shadow-[5px_5px_0px_var(--border-color)] hover:shadow-[5px_5px_0px_var(--primary)] text-xl md:text-2xl font-bold transition-shadow cursor-crosshair select-none flex items-center justify-center gap-2 group"
             >
               <span className="text-primary group-hover:text-foreground transition-colors">#</span>

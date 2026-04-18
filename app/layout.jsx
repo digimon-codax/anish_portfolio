@@ -6,13 +6,49 @@ import Footer from '../components/Footer';
 const spaceGrotesk = Space_Grotesk({ subsets: ['latin'], display: 'swap' });
 
 export const metadata = {
-  title: 'Anish Chatterjee | Backend Developer',
-  description: 'Portfolio of Anish Chatterjee, enthusiastic learner about Full Stack development.',
+  metadataBase: new URL('https://your-deployed-domain.com'),
+  title: 'Anish Chatterjee | Full Stack & Backend Developer',
+  description: 'Portfolio of Anish Chatterjee, a 2nd-year RCCIIT student and backend-focused developer specializing in Node.js, Express, MongoDB, PostgreSQL, React, and Next.js.',
+  keywords: ['Anish Chatterjee', 'Backend Developer', 'Full Stack Developer', 'React', 'Node.js', 'Next.js', 'RCCIIT', 'Portfolio', 'Software Engineer'],
+  authors: [{ name: 'Anish Chatterjee', url: 'https://github.com/digimon-codax' }],
+  creator: 'Anish Chatterjee',
+  openGraph: {
+    type: 'website',
+    locale: 'en_IN',
+    url: 'https://your-deployed-domain.com',
+    title: 'Anish Chatterjee | Full Stack Developer',
+    description: 'Portfolio of Anish Chatterjee, a 2nd-year RCCIIT student and backend-focused developer.',
+    siteName: 'Anish Chatterjee Portfolio',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Anish Chatterjee | Full Stack Developer',
+    description: 'Portfolio of Anish Chatterjee, a backend-focused developer.',
+  },
+  robots: {
+    index: true,
+    follow: true,
+  }
 };
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className="dark scroll-smooth">
+    <html lang="en" className="scroll-smooth relative" suppressHydrationWarning>
+      <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              try {
+                if (localStorage.getItem('theme') === 'light') {
+                  document.documentElement.classList.remove('dark');
+                } else {
+                  document.documentElement.classList.add('dark');
+                }
+              } catch (_) {}
+            `,
+          }}
+        />
+      </head>
       <body className={`${spaceGrotesk.className} min-h-screen flex flex-col bg-background text-foreground transition-colors duration-300`}>
         <Navbar />
         <main className="flex-grow w-full">
