@@ -30,7 +30,7 @@ const skillCategories = [
 
 export default function Skills() {
   return (
-    <section id="skills" className="py-20 w-full scroll-mt-20">
+    <section id="skills" aria-label="Skills" className="py-20 w-full scroll-mt-20">
       <motion.div
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}

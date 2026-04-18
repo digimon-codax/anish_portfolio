@@ -19,7 +19,7 @@ export default function GithubContributions() {
   };
 
   return (
-    <section id="github-stats" className="py-20 w-full scroll-mt-20">
+    <section id="github-stats" aria-label="GitHub Contributions" className="py-20 w-full scroll-mt-20">
       <motion.div 
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}

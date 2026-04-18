@@ -23,7 +23,7 @@ export default function Hero() {
   }, []);
 
   return (
-    <section id="hero" className="min-h-screen flex flex-col justify-between pt-24 w-full relative overflow-hidden">
+    <section id="hero" aria-label="Introduction" className="min-h-screen flex flex-col justify-between pt-24 w-full relative overflow-hidden">
 
       {/* ── Main content ── */}
       <div className="flex-1 flex flex-col items-center justify-center text-center px-4 py-12">
@@ -108,6 +108,7 @@ export default function Hero() {
             className="text-[clamp(4rem,18vw,11rem)] font-black uppercase tracking-[0.05em] leading-none [font-family:var(--font-display)]"
           >
             Anish
+            <span className="sr-only"> Chatterjee - Full Stack Developer</span>
           </motion.h1>
         </div>
 

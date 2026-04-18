@@ -22,7 +22,7 @@ export default function Achievements() {
   if (!achievements || achievements.length === 0) return null;
 
   return (
-    <section id="achievements" className="py-20 w-full scroll-mt-20">
+    <section id="achievements" aria-label="Achievements" className="py-20 w-full scroll-mt-20">
       <motion.div
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}

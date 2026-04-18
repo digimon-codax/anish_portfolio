@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 
 export default function Education() {
   return (
-    <section id="education" className="py-20 w-full scroll-mt-20">
+    <section id="education" aria-label="Education" className="py-20 w-full scroll-mt-20">
       <motion.div
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}

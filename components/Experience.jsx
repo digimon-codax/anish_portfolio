@@ -21,7 +21,7 @@ const experiences = [
 
 export default function Experience() {
   return (
-    <section id="experience" className="py-20 w-full scroll-mt-20">
+    <section id="experience" aria-label="Experience" className="py-20 w-full scroll-mt-20">
       <motion.div
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
