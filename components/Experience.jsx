@@ -5,7 +5,7 @@ const experiences = [
   {
     role: 'Web Associate',
     company: 'RCC Techz',
-    duration: 'Present',
+    duration: '2025 – Present',
     type: 'Club',
     description:
       'Developing and maintaining web applications for the technical club of RCC Institute of Information Technology. Collaborating with peers to implement modern web designs and scale application features.',

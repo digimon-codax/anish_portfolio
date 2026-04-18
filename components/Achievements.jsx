@@ -5,7 +5,7 @@ const achievements = [
   {
     title: 'Web Associate',
     organization: 'RCC Techz',
-    year: '2024 – Present',
+    year: '2025 – Present',
     description:
       'Serving as a core Web Associate for the official technical club of RCCIIT, focusing on developing modern web experiences and community building.',
     icon: (
