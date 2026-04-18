@@ -9,13 +9,6 @@ const projects = [
     github: 'https://github.com/InstincT-07/EnvSync',
     live: 'https://env-sync-xi.vercel.app/',
   },
-  {
-    name: 'Disaster Mesh Backend',
-    description: 'Robust Node.js backend for hybrid disaster communication. Designed with PostGIS, secure API endpoints, robust rate limiting, and mesh network synchronization capabilities.',
-    tech: ['Node.js', 'Express', 'PostgreSQL', 'Socket.io'],
-    github: '#',
-    live: '#',
-  },
 ];
 
 export default function Projects() {
