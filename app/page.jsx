@@ -5,7 +5,6 @@ import Experience from '../components/Experience';
 import Projects from '../components/Projects';
 import Education from '../components/Education';
 import Achievements from '../components/Achievements';
-import Contact from '../components/Contact';
 import GithubContributions from '../components/GithubContributions';
 
 export default function Home() {
@@ -19,7 +18,6 @@ export default function Home() {
       <GithubContributions />
       <Education />
       <Achievements />
-      <Contact />
     </div>
   );
 }
