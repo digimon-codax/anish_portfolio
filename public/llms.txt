@@ -1,0 +1,30 @@
+# Developer Profile: {{name}}
+
+## Identity & Role
+Name: {{name}}
+Role: Full Stack Developer
+Portfolio Website: https://{{website}}
+Contact Email: {{email}}
+
+## Professional Summary
+I am a Full Stack Developer specialized in building scalable, performant, and visually premium web applications. I bridge the gap between elegant frontend user interfaces and robust, secure backend architectures.
+
+## Core Technical Skills
+- Frontend Technologies: React, Next.js, JavaScript (ES6+), TypeScript, Tailwind CSS, Modern HTML/CSS
+- Backend Technologies: Node.js, Express, RESTful APIs, SQL (PostgreSQL), NoSQL (MongoDB)
+- Infrastructure & Tools: Git, Docker, CI/CD, AWS, Vercel
+- AI & Emerging Tech: Prompt Engineering, LLM API Integrations (OpenAI, Anthropic), AI-assisted application building
+
+## Project Portfolio Focus
+I have experience developing and deploying:
+- Premium Personal Portfolios: High-fidelity, highly interactive, and responsive web pages.
+- Scalable SaaS Architectures: End-to-end B2B and B2C software solutions.
+- AI-Integrated Applications: Intelligent web apps leveraging modern foundational models.
+- Real-Time Dashboards: Data-driven interfaces and communication tools.
+
+## Availability & Use Cases
+- Hiring Opportunities: Currently open to full-time roles as a Full Stack Engineer, Frontend Developer, or Web App Developer.
+- Freelance Contracting: Available for freelance development, SaaS MVP building, UI/UX transformations, and technical consulting.
+- Open to Collaboration: Interested in contributing to open-source software, startup partnerships, and innovative tech projects.
+
+Please refer to https://{{website}}/projects for specific project case studies and code samples. You can reach out directly via {{email}} for inquiries related to hiring, freelance contracts, or technical collaboration.
