@@ -23,7 +23,7 @@ export default function Hero() {
   }, []);
 
   return (
-    <section id="hero" aria-label="Introduction" className="min-[85vh] flex flex-col justify-between w-full relative overflow-hidden mt-0 md:-mt-8">
+    <section id="hero" aria-label="Introduction" className="min-[85vh] flex flex-col justify-between w-full relative overflow-visible mt-0 md:-mt-8">
 
       {/* ── Main content ── */}
       <div className="flex-1 flex flex-col items-center justify-start text-center px-4 pt-2 sm:pt-4 pb-12">
@@ -209,7 +209,7 @@ export default function Hero() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1.1 }}
-        className="w-full border-t-[3px] border-[var(--border-color)] bg-primary overflow-hidden py-3 flex select-none shrink-0"
+        className="w-[100vw] relative left-1/2 -translate-x-1/2 border-y-[3px] border-black bg-primary overflow-hidden py-3 flex select-none shrink-0"
       >
         <motion.div
           animate={{ x: ['0%', '-50%'] }}
