@@ -41,7 +41,7 @@ export default function Navbar() {
         animate={{ y: 0 }}
         className={`fixed top-0 w-full z-50 transition-all duration-300 ${
           scrolled
-            ? 'bg-[var(--background)]/95 backdrop-blur-sm border-b-[3px] border-[var(--border-color)]'
+            ? 'bg-[var(--background)]/95 backdrop-blur-sm shadow-sm'
             : 'bg-[var(--background)]/80 border-b-[2px] border-[var(--border-color)]/30'
         }`}
       >

@@ -23,10 +23,10 @@ export default function Hero() {
   }, []);
 
   return (
-    <section id="hero" aria-label="Introduction" className="min-h-screen flex flex-col justify-between pt-24 w-full relative overflow-hidden">
+    <section id="hero" aria-label="Introduction" className="min-[85vh] flex flex-col justify-between w-full relative overflow-hidden mt-0 md:-mt-8">
 
       {/* ── Main content ── */}
-      <div className="flex-1 flex flex-col items-center justify-center text-center px-4 py-12">
+      <div className="flex-1 flex flex-col items-center justify-start text-center px-4 pt-2 sm:pt-4 pb-12">
 
         {/* Clock + location row */}
         <motion.div
