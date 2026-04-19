@@ -1,7 +1,8 @@
-import { Space_Grotesk, Bebas_Neue } from 'next/font/google';
+import { Space_Grotesk, Bebas_Neue, Dancing_Script } from 'next/font/google';
 import './globals.css';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
+import SmoothScrolling from '../components/SmoothScrolling';
 
 const spaceGrotesk = Space_Grotesk({ subsets: ['latin'], display: 'swap' });
 const bebasNeue = Bebas_Neue({
@@ -9,6 +10,12 @@ const bebasNeue = Bebas_Neue({
   subsets: ['latin'],
   display: 'swap',
   variable: '--font-display',
+});
+
+const dancingScript = Dancing_Script({
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-cursive',
 });
 
 export const metadata = {
@@ -55,12 +62,14 @@ export default function RootLayout({ children }) {
           }}
         />
       </head>
-      <body className={`${spaceGrotesk.className} ${bebasNeue.variable} min-h-screen flex flex-col bg-background text-foreground transition-colors duration-300`}>
-        <Navbar />
-        <main className="flex-grow w-full">
-          {children}
-        </main>
-        <Footer />
+      <body className={`${spaceGrotesk.className} ${bebasNeue.variable} ${dancingScript.variable} min-h-screen flex flex-col bg-background text-foreground transition-colors duration-300`}>
+        <SmoothScrolling>
+          <Navbar />
+          <main className="flex-grow w-full">
+            {children}
+          </main>
+          <Footer />
+        </SmoothScrolling>
       </body>
     </html>
   );
