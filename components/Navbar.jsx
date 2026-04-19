@@ -73,7 +73,7 @@ export default function Navbar() {
         initial={{ opacity: 0, x: -20 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ delay: 0.3 }}
-        className="fixed top-8 md:top-10 left-6 md:left-12 z-50 text-3xl font-black tracking-wide [font-family:var(--font-display)] hover:scale-105 transition-transform origin-left"
+        className="hidden md:block fixed top-10 left-12 z-50 text-3xl font-black tracking-wide [font-family:var(--font-display)] hover:scale-105 transition-transform origin-left"
       >
         Anish<span className="text-primary animate-pulse">_</span>
       </motion.a>
