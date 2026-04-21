@@ -46,16 +46,10 @@ export default function Skills() {
         transition={{ duration: 0.6 }}
         className="w-full"
       >
-        {/* Figma-style header */}
-        <div className="flex items-center gap-4 mb-20 md:mb-24">
-          <h2 className="text-4xl md:text-6xl font-black uppercase tracking-tighter inline-block relative text-[var(--selection-blue)]">
-            Skills Canvas
-            <div className="absolute -bottom-2 right-0 w-1/2 h-1 bg-[var(--selection-blue)] opacity-40" />
-          </h2>
-          <span className="px-3 py-1 bg-[var(--selection-blue)] text-white text-xs font-bold font-mono tracking-widest hidden sm:block pointer-events-none">
-            100%
-          </span>
-        </div>
+        <h2 className="text-4xl md:text-6xl font-black mb-16 uppercase tracking-tighter inline-block relative">
+          Skills Canvas
+          <div className="absolute -bottom-2 left-0 w-2/3 h-3 bg-primary -z-10 -rotate-1 hidden md:block" />
+        </h2>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 md:gap-20">
           {skillCategories.map((cat, catIndex) => (
