@@ -62,13 +62,13 @@ export default function Skills() {
               className="relative w-full group cursor-crosshair"
             >
               {/* Figma Frame Label */}
-              <div className="absolute -top-7 left-0 text-[14px] font-bold font-mono text-[var(--selection-blue)] flex items-center gap-2 pointer-events-none transition-transform group-hover:-translate-y-1">
+              <div className="absolute -top-7 left-0 text-[14px] font-bold font-mono text-foreground opacity-60 flex items-center gap-2 pointer-events-none transition-transform group-hover:-translate-y-1">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 21V3"/><path d="M19 21V3"/><path d="M3 5h18"/><path d="M3 19h18"/></svg>
                 {cat.label}
               </div>
 
               {/* The Figma Canvas Box */}
-              <div className="relative border-[2px] border-dashed border-[var(--selection-blue)] p-8 md:p-10 bg-[var(--card-bg)] transition-colors duration-300">
+              <div className="relative border-[2px] border-dashed border-[var(--border-color)] p-8 md:p-10 bg-[var(--card-bg)] transition-colors duration-300">
                 
                 {/* 4 Corner Anchors */}
                 {[
@@ -77,12 +77,12 @@ export default function Skills() {
                   'bottom-0 left-0 -translate-x-1/2 translate-y-1/2',
                   'bottom-0 right-0 translate-x-1/2 translate-y-1/2',
                 ].map((pos, i) => (
-                  <div key={i} className={`absolute w-3 h-3 bg-white border-[2px] border-[var(--selection-blue)] ${pos} z-10 transition-transform duration-300 group-hover:scale-[1.3]`} />
+                  <div key={i} className={`absolute w-3 h-3 bg-[var(--background)] border-[2px] border-[var(--border-color)] ${pos} z-10 transition-transform duration-300 group-hover:scale-[1.3] group-hover:bg-primary`} />
                 ))}
 
-                {/* Hover Grid Guides (Red measurement lines) */}
-                <div className="absolute top-0 bottom-0 left-1/3 w-[1px] bg-red-400 opacity-0 group-hover:opacity-40 pointer-events-none transition-opacity" />
-                <div className="absolute left-0 right-0 top-1/2 h-[1px] bg-red-400 opacity-0 group-hover:opacity-40 pointer-events-none transition-opacity" />
+                {/* Hover Grid Guides (Primary Color measurement lines) */}
+                <div className="absolute top-0 bottom-0 left-1/3 w-[1px] bg-primary opacity-0 group-hover:opacity-40 pointer-events-none transition-opacity" />
+                <div className="absolute left-0 right-0 top-1/2 h-[1px] bg-primary opacity-0 group-hover:opacity-40 pointer-events-none transition-opacity" />
 
                 {/* Skills Component Instances */}
                 <div className="flex flex-wrap gap-5 relative z-20">
@@ -94,12 +94,12 @@ export default function Skills() {
                       viewport={{ once: true }}
                       transition={{ delay: catIndex * 0.1 + index * 0.05, type: 'spring', stiffness: 200 }}
                       whileHover={{ scale: 1.05 }}
-                      className="px-5 py-3 bg-[var(--background)] border-[2px] border-dashed border-[#a855f7] text-lg font-bold flex items-center gap-3 relative group/skill hover:bg-[#a855f7]/10 transition-colors shadow-[4px_4px_0px_rgba(168,85,247,0.15)] hover:shadow-[6px_6px_0px_rgba(168,85,247,0.3)]"
+                      className="px-5 py-3 bg-[var(--background)] border-[2px] border-dashed border-[var(--border-color)] text-lg font-bold flex items-center gap-3 relative group/skill hover:bg-primary/10 transition-colors shadow-[4px_4px_0px_var(--border-color)] hover:shadow-[6px_6px_0px_var(--primary)]"
                     >
-                      {/* Purple Figma Component Diamond icon */}
-                      <div className="absolute -top-1.5 -left-1.5 w-3 h-3 bg-white border-[2px] border-[#a855f7] rotate-45 opacity-0 group-hover/skill:opacity-100 transition-opacity" />
+                      {/* Component Diamond icon */}
+                      <div className="absolute -top-1.5 -left-1.5 w-3 h-3 bg-[var(--background)] border-[2px] border-[var(--border-color)] rotate-45 opacity-0 group-hover/skill:opacity-100 transition-opacity group-hover/skill:bg-primary" />
                       
-                      {iconMap[skill] || <span className="text-[#a855f7] text-xl">❖</span>}
+                      {iconMap[skill] || <span className="text-foreground text-xl">❖</span>}
                       <span className="text-foreground tracking-tight">{skill}</span>
                     </motion.div>
                   ))}
