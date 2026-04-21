@@ -1,5 +1,21 @@
 'use client';
 import { motion } from 'framer-motion';
+import { FaReact, FaNodeJs, FaPython, FaDocker, FaGitAlt, FaGithub } from 'react-icons/fa';
+import { SiNextdotjs, SiTailwindcss, SiExpress, SiMongodb, SiPostgresql } from 'react-icons/si';
+
+const iconMap = {
+  'React.js': <FaReact className="text-[#61DAFB] text-2xl group-hover:rotate-12 transition-transform" />,
+  'Next.js': <SiNextdotjs className="text-[var(--foreground)] text-2xl group-hover:rotate-12 transition-transform" />,
+  'TailwindCSS': <SiTailwindcss className="text-[#38B2AC] text-2xl group-hover:rotate-12 transition-transform" />,
+  'Node.js': <FaNodeJs className="text-[#339933] text-2xl group-hover:rotate-12 transition-transform" />,
+  'Express.js': <SiExpress className="text-[var(--foreground)] text-2xl group-hover:rotate-12 transition-transform" />,
+  'Python': <FaPython className="text-[#3776AB] text-2xl group-hover:rotate-12 transition-transform" />,
+  'MongoDB': <SiMongodb className="text-[#47A248] text-2xl group-hover:rotate-12 transition-transform" />,
+  'PostgreSQL': <SiPostgresql className="text-[#336791] text-2xl group-hover:rotate-12 transition-transform" />,
+  'Docker': <FaDocker className="text-[#2496ED] text-2xl group-hover:rotate-12 transition-transform" />,
+  'Git': <FaGitAlt className="text-[#F05032] text-2xl group-hover:rotate-12 transition-transform" />,
+  'GitHub': <FaGithub className="text-[var(--foreground)] text-2xl group-hover:rotate-12 transition-transform" />,
+};
 
 const skillCategories = [
   {
@@ -68,9 +84,9 @@ export default function Skills() {
                     viewport={{ once: true }}
                     transition={{ delay: catIndex * 0.1 + index * 0.05, type: 'spring', stiffness: 200 }}
                     whileHover={{ scale: 1.08, y: -3 }}
-                    className="px-5 py-3 bg-background border-[3px] border-[var(--border-color)] shadow-[4px_4px_0px_var(--border-color)] hover:shadow-[4px_4px_0px_var(--primary)] text-lg font-bold cursor-crosshair select-none transition-shadow flex items-center gap-2 group"
+                    className="px-5 py-3 bg-background border-[3px] border-[var(--border-color)] shadow-[4px_4px_0px_var(--border-color)] hover:shadow-[4px_4px_0px_var(--primary)] text-lg font-bold cursor-crosshair select-none transition-shadow flex items-center gap-3 group"
                   >
-                    <span className="text-primary group-hover:rotate-12 transition-transform inline-block">#</span>
+                    {iconMap[skill] || <span className="text-primary group-hover:rotate-12 transition-transform inline-block">#</span>}
                     {skill}
                   </motion.span>
                 ))}
